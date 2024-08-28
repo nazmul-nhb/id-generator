@@ -1,0 +1,30 @@
+{
+	"name": "id-generator",
+	"version": "0.9.1",
+	"description": "A simple utility package to generate unique ID based on user preference.",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"prepublishOnly": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nazmul-nhb/id-generator.git"
+	},
+	"keywords": [
+		"id",
+		"generator",
+		"id-generator",
+		"typescript",
+		"npm-package"
+	],
+	"author": "Nazmul Hassan",
+	"license": "MIT",
+	"devDependencies": {
+		"typescript": "^5.5.4"
+	},
+	"dependencies": {
+		"tslib": "^2.7.0"
+	}
+}
