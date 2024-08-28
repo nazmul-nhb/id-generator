@@ -8,7 +8,7 @@ A simple utility package to generate unique ID based on user preference.
 
 ## Installation
 
-To install `@nazmul-nhb/id-generator`, use npm or yarn:
+To install `ID Generator`, use npm or yarn:
 
 ```bash
 npm install @nazmul-nhb/id-generator
@@ -43,7 +43,7 @@ The `generateID` function accepts an optional `options` object with the followin
 - **`timeStamp`** (`boolean`, optional): Whether to include the current timestamp in the ID. Default is `true`.
 - **`length`** (`number`, optional): The length of the random alphanumeric string. Default is `13`.
 - **`separator`** (`string`, optional): The separator to use between parts of the ID. Default is a period (`"."`).
-- **caseOption** (`"upper" | "lower"`, optional): Specifies the case for the random alphanumeric string. Default is `"upper"`.
+- **`caseOption`** (`"upper" | "lower"`, optional): Specifies the case for the random alphanumeric string. Default is `"upper"`.
 
 ### Examples
 
