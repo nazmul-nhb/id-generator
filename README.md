@@ -87,7 +87,7 @@ const id = generateID({ suffix: "END" });
 console.log(id);
 ```
 
-#### Generate an ID with a lowercase random string
+#### Generate an ID with a lowercase/uppercase random string
 
 ```typescript
 const id = generateID({ caseOption: "lower" });

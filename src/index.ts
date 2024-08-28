@@ -69,6 +69,11 @@ interface Options {
  * // Generate an ID with a custom suffix
  * const id = generateID({ suffix: 'END' });
  * // Example output: "1693219475394.ABCDEFGHIJKLEND"
+ *
+ * @example
+ * // Generate an ID with a lowercase/uppercase random string
+ * const id = generateID({ caseOption: "lower" });
+ * // Example output: "1693219475394.abcdefghijklm"
  */
 
 // Main function to generate ID
