@@ -1,3 +1,3 @@
-import {generateID} from "./dist/index";
+import { generateID } from "./dist/index";
 
 console.log(generateID());

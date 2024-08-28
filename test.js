@@ -1,3 +1,3 @@
-const {generateID } = require('./dist/index')
+const { generateID } = require('./dist/index')
 
 console.log(generateID());
