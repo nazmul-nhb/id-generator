@@ -66,7 +66,9 @@ interface Options {
  * // Example output: "1693219475394.ABCDEFGHIJKLEND"
  */
 
+// The main function to generate ID
 export const generateID = (options?: Options): string => {
+	// Destructure the options
 	const {
 		prefix = "",
 		suffix = "",
@@ -75,6 +77,7 @@ export const generateID = (options?: Options): string => {
 		separator = ".",
 	} = options || {};
 
+	// generate timestamp
 	const date: number | string = timeStamp ? Date.now() : "";
 
 	// Generate a random string of alphanumeric characters
@@ -84,5 +87,6 @@ export const generateID = (options?: Options): string => {
 		.join("")
 		.toUpperCase();
 
+	// return the ID with the options (if there is any)
 	return [prefix, date, randomString, suffix].filter(Boolean).join(separator);
 };

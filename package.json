@@ -4,7 +4,7 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"description": "A simple utility package to generate unique ID based on user preference.",
+	"description": "A simple utility package to generate unique ID based on user preferences.",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"scripts": {
