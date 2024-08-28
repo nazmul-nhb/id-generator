@@ -26,6 +26,10 @@ interface Options {
 	 * The separator to use between parts of the ID. Default is a period (".").
 	 */
 	separator?: string;
+	/**
+	 * Specifies the case for the random alphanumeric string. Default is 'upper'.
+	 */
+	caseOption?: "upper" | "lower";
 }
 
 /**
@@ -38,6 +42,7 @@ interface Options {
  * @param {boolean} [options.timeStamp=true] - Whether to include the current timestamp in the ID. Default is true.
  * @param {number} [options.length=13] - The length of the random alphanumeric string. Default is 13.
  * @param {string} [options.separator='.'] - The separator to use between parts of the ID. Default is a period ("`.`").
+ * @param {string} [options.caseOption="upper" || "lower"] - Specifies the case for the random alphanumeric string. Default is 'upper'.
  * @returns {string} The generated ID.
  *
  * @example
@@ -66,27 +71,40 @@ interface Options {
  * // Example output: "1693219475394.ABCDEFGHIJKLEND"
  */
 
-// The main function to generate ID
+// Main function to generate ID
 export const generateID = (options?: Options): string => {
-	// Destructure the options
+	// destructure the options
 	const {
 		prefix = "",
 		suffix = "",
 		timeStamp = true,
 		length = 13,
 		separator = ".",
+		caseOption = "upper",
 	} = options || {};
 
 	// generate timestamp
 	const date: number | string = timeStamp ? Date.now() : "";
 
 	// Generate a random string of alphanumeric characters
-	const randomString: string = Array.from({ length }, () =>
+	let randomString: string = Array.from({ length }, () =>
 		Math.random().toString(36).slice(2, 3)
-	)
-		.join("")
-		.toUpperCase();
+	).join("");
+
+	// check case option
+	if (caseOption === "upper") {
+		randomString = randomString.toUpperCase();
+	} else if (caseOption === "lower") {
+		randomString = randomString.toLowerCase();
+	}
 
 	// return the ID with the options (if there is any)
-	return [prefix, date, randomString, suffix].filter(Boolean).join(separator);
+	return [
+		prefix && prefix.trim(),
+		date,
+		randomString,
+		suffix && suffix.trim(),
+	]
+		.filter(Boolean)
+		.join(separator);
 };

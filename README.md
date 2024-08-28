@@ -4,7 +4,7 @@ A simple utility package to generate unique ID based on user preference.
 
 ## @nazmul-nhb/id-generator
 
-`@nazmul-nhb/id-generator` is a TypeScript library for generating unique ID strings with customizable options. It allows you to create IDs with optional prefixes, suffixes, timestamps, and custom separators.
+`ID Generator` is a TypeScript library for generating unique ID strings with customizable options. It allows you to create IDs with optional prefixes, suffixes, timestamps, and custom separators.
 
 ## Installation
 
@@ -31,7 +31,7 @@ import { generateID } from "@nazmul-nhb/id-generator";
 or
 
 ```javascript
-const { generateID } = require('@nhb/id-generator');
+const { generateID } = require('@nazmul-nhb/id-generator');
 ```
 
 ### Options
@@ -43,6 +43,7 @@ The `generateID` function accepts an optional `options` object with the followin
 - **`timeStamp`** (`boolean`, optional): Whether to include the current timestamp in the ID. Default is `true`.
 - **`length`** (`number`, optional): The length of the random alphanumeric string. Default is `13`.
 - **`separator`** (`string`, optional): The separator to use between parts of the ID. Default is a period (`"."`).
+- **caseOption** (`"upper" | "lower"`, optional): Specifies the case for the random alphanumeric string. Default is `"upper"`.
 
 ### Examples
 
@@ -85,6 +86,16 @@ const id = generateID({ suffix: "END" });
 // Example output: "1693219475394.ABCDEFGHIJKLEND"
 console.log(id);
 ```
+
+#### Generate an ID with a lowercase random string
+
+```typescript
+const id = generateID({ caseOption: "lower" });
+// Example output: "1693219475394.abcdefghijklm"
+console.log(id);
+```
+
+**You can use all the options at the same time!**
 
 ## API
 
