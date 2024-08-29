@@ -19,7 +19,7 @@ interface Options {
 
 	/**
 	 * The length of the random alphanumeric string. Default is 13.
-	 * If the input length is less than 8, it will be automatically set to 8.
+	 *
 	 */
 	length?: number;
 
@@ -43,7 +43,7 @@ interface Options {
  * @property {string} [prefix] - A string to prepend to the ID. Default is an empty string.
  * @property {string} [suffix] - A string to append to the ID. Default is an empty string.
  * @property {boolean} [timeStamp] - Whether to include the current timestamp in the ID. Default is true.
- * @property {number} [length] - The length of the random alphanumeric string. Default is 13. If the input length is less than 8, it will be automatically set to 8.
+ * @property {number} [length] - The length of the random alphanumeric string. Default is 13.
  * @property {string} [separator] - The separator to use between parts of the ID. Default is a period (".").
  * @property {"upper" | "lower"} [caseOption] - Specifies the case for the random alphanumeric string. Default is "upper".
  *
@@ -104,14 +104,14 @@ export const generateID = (options?: Options): string => {
 		caseOption = "upper",
 	} = options || {};
 
-	// Ensure the length is at least 8
-	const validatedLength = length < 8 ? 8 : length;
+	// ! Not Using Currently: Ensure the length is at least 8
+	// const validatedLength = length < 8 ? 8 : length;
 
 	// generate timestamp
 	const date: number | string = timeStamp ? Date.now() : "";
 
 	// Generate a random string of alphanumeric characters
-	let randomString: string = Array.from({ length: validatedLength }, () =>
+	let randomString: string = Array.from({ length }, () =>
 		Math.random().toString(36).slice(2, 3)
 	).join("");
 

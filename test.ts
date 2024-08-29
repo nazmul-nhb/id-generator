@@ -1,3 +1,3 @@
 import { generateID } from "./dist/index";
 
-console.log(generateID({ length: 1 }));
+console.log(generateID({ length: 0 }));
