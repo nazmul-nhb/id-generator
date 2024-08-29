@@ -1,3 +1,3 @@
 import { generateID } from "./dist/index";
 
-console.log(generateID({ caseOption: "lower" }));
+console.log(generateID({ length: 1 }));

@@ -41,7 +41,7 @@ The `generateID` function accepts an optional `options` object with the followin
 - **`prefix`** (`string`, optional): A string to prepend to the ID. Default is an empty string.
 - **`suffix`** (`string`, optional): A string to append to the ID. Default is an empty string.
 - **`timeStamp`** (`boolean`, optional): Whether to include the current timestamp in the ID. Default is `true`.
-- **`length`** (`number`, optional): The length of the random alphanumeric string. Default is `13`.
+- **`length`** (`number`, optional): The length of the random alphanumeric string. Default is `13`. If the input length is less than 8, it will be automatically set to 8.
 - **`separator`** (`string`, optional): The separator to use between parts of the ID. Default is a period (`"."`).
 - **`caseOption`** (`"upper" | "lower"`, optional): Specifies the case for the random alphanumeric string. Default is `"upper"`.
 
@@ -87,7 +87,7 @@ const id = generateID({ suffix: "END" });
 console.log(id);
 ```
 
-#### Generate an ID with a lowercase/uppercase random string
+#### Generate an ID with a lowercase random string
 
 ```typescript
 const id = generateID({ caseOption: "lower" });
@@ -96,6 +96,21 @@ console.log(id);
 ```
 
 **You can use all the options at the same time!**
+
+#### Generate an ID with all options customized
+
+```typescript
+const id = generateID({
+   prefix: 'ID',
+   suffix: 'END',
+   timeStamp: true,
+   length: 10,
+   separator: '~',
+   caseOption: "lower"
+ });
+ // Example output: "ID~1693219475394~abcdefghij~END"
+console.log(id);
+```
 
 ## API
 
