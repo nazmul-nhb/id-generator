@@ -29,7 +29,7 @@ interface Options {
 	separator?: string;
 
 	/**
-	 * Specifies the case for the random alphanumeric string. Default is 'upper'.
+	 * Specifies the case for the random alphanumeric string.
 	 */
 	caseOption?: "upper" | "lower";
 }
@@ -45,7 +45,7 @@ interface Options {
  * @property {boolean} [timeStamp] - Whether to include the current timestamp in the ID. Default is true.
  * @property {number} [length] - The length of the random alphanumeric string. Default is 13.
  * @property {string} [separator] - The separator to use between parts of the ID. Default is a period (".").
- * @property {"upper" | "lower"} [caseOption] - Specifies the case for the random alphanumeric string. Default is "upper".
+ * @property {"upper" | "lower"} [caseOption] - Specifies the case for the generated ID.
  *
  * @returns {string} The generated ID string composed of the prefix, timestamp, random alphanumeric string, and suffix, separated by the specified separator.
  *
@@ -101,7 +101,7 @@ export const generateID = (options?: Options): string => {
 		timeStamp = true,
 		length = 13,
 		separator = ".",
-		caseOption = "upper",
+		caseOption = "",
 	} = options || {};
 
 	// ! Not Using Currently: Ensure the length is at least 8
@@ -111,19 +111,11 @@ export const generateID = (options?: Options): string => {
 	const date: number | string = timeStamp ? Date.now() : "";
 
 	// Generate a random string of alphanumeric characters
-	let randomString: string = Array.from({ length }, () =>
+	const randomString: string = Array.from({ length }, () =>
 		Math.random().toString(36).slice(2, 3)
 	).join("");
 
-	// check case option
-	if (caseOption === "upper") {
-		randomString = randomString.toUpperCase();
-	} else if (caseOption === "lower") {
-		randomString = randomString.toLowerCase();
-	}
-
-	// return the ID with the options (if there is any)
-	return [
+	const ID: string = [
 		prefix && prefix.trim(),
 		date,
 		randomString,
@@ -131,4 +123,14 @@ export const generateID = (options?: Options): string => {
 	]
 		.filter(Boolean)
 		.join(separator);
+
+	// check case option for the generated ID
+	// and return the ID with the options (if there is any)
+	if (caseOption === "upper") {
+		return ID.toUpperCase();
+	} else if (caseOption === "lower") {
+		return ID.toLowerCase();
+	} else {
+		return ID;
+	}
 };
