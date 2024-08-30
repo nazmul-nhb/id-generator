@@ -52,32 +52,32 @@ interface Options {
  * @example
  * // Generate an ID with all default options
  * const id = generateID();
- * // Example output: "1693219475394.ABCDEFGHIJKL"
+ * // Example output: "1725026144072.8rp09zp5ewa4z"
  *
  * @example
  * // Generate an ID with a custom prefix and separator
  * const id = generateID({ prefix: 'ID', separator: '-' });
- * // Example output: "ID-1693219475394-ABCDEFGHIJKL"
+ * // Example output: "ID-1725026185691-128g0f6vdhyh5"
  *
  * @example
  * // Generate an ID without a timestamp
  * const id = generateID({ timeStamp: false });
- * // Example output: "ABCDEFGHIJKL"
+ * // Example output: "1xq66nqnlplu9"
  *
  * @example
  * // Generate an ID with a custom length for the random string
  * const id = generateID({ length: 8 });
- * // Example output: "1693219475394.ABCDEFGH"
+ * // Example output: "1725026316314.fkdwry5e"
  *
  * @example
  * // Generate an ID with a custom suffix
  * const id = generateID({ suffix: 'END' });
- * // Example output: "1693219475394.ABCDEFGHIJKLEND"
+ * // Example output: "1725026349832.cl3j5he8k8sih.END"
  *
  * @example
- * // Generate an ID with a lowercase random string
- * const id = generateID({ caseOption: "lower" });
- * // Example output: "1693219475394.abcdefghijklm"
+ * // Generate an ID with a uppercase random string
+ * const id = generateID({ caseOption: "upper" });
+ * // Example output: "1725026408246.33BN8WNK9VZ4Y"
  *
  * @example
  * // Generate an ID with all options customized
@@ -87,9 +87,9 @@ interface Options {
  *   timeStamp: true,
  *   length: 10,
  *   separator: '-',
- *   caseOption: "lower"
+ *   caseOption: "upper"
  * });
- * // Example output: "ID-1693219475394-abcdefghij-END"
+ * // Example output: "ID-1725026458372-UIH1JU9NT1-END"
  */
 
 // Main function to generate ID

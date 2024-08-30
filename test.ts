@@ -1,3 +1,3 @@
 import { generateID } from "./dist/index";
 
-console.log(generateID({ prefix:"nHb", caseOption:"lower"}));
+console.log(generateID({ timeStamp: false }));
