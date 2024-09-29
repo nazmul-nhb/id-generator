@@ -1,6 +1,6 @@
 {
 	"name": "@nazmul-nhb/id-generator",
-	"version": "1.2.1",
+	"version": "1.2.3",
 	"publishConfig": {
 		"access": "public"
 	},
@@ -22,7 +22,10 @@
 		"typescript",
 		"npm-package"
 	],
-	"author": "Nazmul Hassan",
+	"author": {
+		"name": "Nazmul Hassan",
+		"email": "nazmulnhb@gmail.com"
+	},
 	"license": "MIT",
 	"devDependencies": {
 		"typescript": "^5.5.4"
